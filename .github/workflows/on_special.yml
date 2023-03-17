@@ -1,5 +1,9 @@
-name: mon premier worflow
-on: push 
+name: on special
+on: 
+  push:
+    banches:
+      - "speciale"
+      
 jobs: 
   first-job:
     runs-on: ubuntu-latest

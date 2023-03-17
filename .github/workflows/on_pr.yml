@@ -1,0 +1,10 @@
+name: on pull request
+on: pull_request
+
+jobs: 
+  first-job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: print 
+        run: echo "c'est une Pt qui a déclenché"
+     

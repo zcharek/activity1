@@ -1,10 +1,12 @@
 name: on pull request
-on: pull_request
+on: 
+  pull_request:
+    types: [closed]
 
 jobs: 
   first-job:
     runs-on: ubuntu-latest
     steps:
       - name: print 
-        run: echo "c'est une Pt qui a déclenché"
+        run: echo "c'est une fermeture de Pr qui a déclenché"
      

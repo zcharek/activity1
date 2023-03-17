@@ -3,13 +3,16 @@ on:
   push:
     banches:
       - "speciale"
+    paths:
+      - "./api"
+      - "**.steps.js"
       
 jobs: 
   first-job:
     runs-on: ubuntu-latest
     steps:
-      - name: print bonjour 
-        run: echo "bonjour"
+      - name: print specialegit 
+        run: echo "On speciale"
       - name: print comment
         run: echo "comment ça va ?" 
   second-job:

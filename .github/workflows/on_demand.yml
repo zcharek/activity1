@@ -1,11 +1,17 @@
 name: on demand
-on: workflow_dispatch
-  
+on: 
+  workflow_dispatch:
+    inputs:
+      firstName:
+        description: 'Choisissez un prénom'
+        required: true
+        default: 'john'
+        type: string
       
 jobs: 
   first-job:
     runs-on: ubuntu-latest
     steps:
       - name: print  
-        run: echo "On demand"
+        run: echo "Bonjour ${{ inputs.firstName }}"
       

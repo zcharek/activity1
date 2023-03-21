@@ -10,7 +10,7 @@ jobs:
   print:
     env:
       JOB_VAR: B
-    runs-on: ubuntu-latest
+      runs-on: ubuntu-latest
     steps: 
       - name: print
         env:

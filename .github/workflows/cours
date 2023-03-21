@@ -1,0 +1,54 @@
+
+
+
+#On accède aux contextes en utilisant la syntaxe d'expression.
+
+#Quézako ? c'est ça :
+
+#${{ <expression> }}
+# Et donc il y a toute une liste de contextes (objets) mis à disposition par Github pour accèder à plein d'informations :
+
+# Récupérer le nom d'utilisateur de l'utilisateur qui a déclenché l'action :
+ ${{ github.actor }}
+
+# Récupérer le système d'exploitation du runner :
+ ${{ runner.os }}
+
+# Récupérer le statut d'un job :
+ ${{ job.status }}
+
+# Récupérer la valeur de "toto" qu'on a déclaré dans notre organisation Github :
+ ${{ vars.toto }}
+
+#Si ça ne suffit pas et que l'on souhaite déclarer nos propres variables on peut utiliser dans notre workflow :
+env:
+   VARIABLE: valeur
+# On pourra ainsi y accéder avec :
+
+# Dans notre script yaml :
+${{ env.VARIABLE }}
+
+# Dans le 'run' linux de notre step (en admettant qu'il tourne sous linux) :
+$VARIABLE
+
+# Dans le 'run' node js de notre step (en admettant qu'il tourne sous node) :
+process.env.VARIABLE
+Et donc voici un exemple basique d'utilisation de variables :
+name: Exemple variables
+
+on:
+  push
+
+env:
+  PLAT: pizza
+
+jobs:
+  manger:
+    runs-on: ubuntu-latest
+    env:
+      TYPE: calzone
+    steps:
+      - name: print
+        run: echo "$ACTOR veut $PLAT de type $TYPE"
+        env:
+          ACTOR: ${{ github.actor }}

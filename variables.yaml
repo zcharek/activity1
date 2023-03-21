@@ -15,4 +15,4 @@ jobs:
       - name: print
         env:
           STEP_VAR: C
-        run: echo "Ce workflow a 3 variables que sont ${{env.WORKFLOW_VAR}}, ${{env.JOB_VAR}}, ${{env.STEP_VAR}}"
+          run: echo "Ce workflow a 3 variables que sont ${{env.WORKFLOW_VAR}}, ${{env.JOB_VAR}}, ${{env.STEP_VAR}}"

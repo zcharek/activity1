@@ -1,0 +1,18 @@
+name: variables 
+
+on:
+  push
+  
+env:
+  WORKFLOW_VAR: A
+  
+jobs:
+  print:
+    env:
+  JOB_VAR: B
+    runs-on: ubuntu-latest
+    steps: 
+      - name: print
+        env:
+          STEP_VAR: C
+        run: echo "Ce workflow a 3 variables que sont ${{env.WORKFLOW_VAR}}, ${{env.JOB_VAR}}, ${{env.STEP_VAR}}"

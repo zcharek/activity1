@@ -9,7 +9,7 @@ env:
 jobs:
   print:
     env:
-  JOB_VAR: B
+      JOB_VAR: B
     runs-on: ubuntu-latest
     steps: 
       - name: print

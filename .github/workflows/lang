@@ -12,7 +12,7 @@ jobs:
    runs-on: ubuntu-latest
    steps:
      - name: print
-       run: echo "l'utilisateur ${{github.actor}} parle français." 
+       run: echo "l'user ${{github.actor}} parle français." 
   
   other-job:
    if: vars.LANG != 'FR'
